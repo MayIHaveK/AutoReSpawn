@@ -32,34 +32,6 @@ public class AutoSpawnHandler {
         FMLCommonHandler.instance().bus().register(this);
     }
 
-    @SubscribeEvent
-    public void onGuiOpen(GuiOpenEvent event) {
-        GuiScreen gui = event.gui;
-        if (gui instanceof GuiGameOver) {
-            EntityClientPlayerMP player = Minecraft.getMinecraft().thePlayer;
-            int type = ConfigLoader.type;
-            if (type == 0) {
-                player.respawnPlayer();
-            }
-        }
-    }
-
-    @SubscribeEvent
-    public void onPlayerReSpawn(PlayerEvent.PlayerRespawnEvent event){
-        //if(ConfigLoader.type != 1){
-        //    return;
-        //}
-        //EntityPlayer player = event.player;
-        //String name = player.getCommandSenderName();
-        //ConcurrentHashMap<String, DeathData> hashMap = DeathData.deathDataHashMap;
-        //if(!hashMap.containsKey(name)){
-        //    return;
-        //}
-        ////通知给客户端，让客户端重生
-        //MessagePositionHistory history = new MessagePositionHistory();
-        //history.playerName = name;
-        //NetworkLoader.instance.sendTo(history,(EntityPlayerMP)player);
-    }
 
     @SubscribeEvent
     public void onPlayerDeath(LivingDeathEvent event){
