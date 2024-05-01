@@ -28,7 +28,7 @@ public class ConfigLoader {
     public static void load() {
         logger.info("开始加载配置！ ");
         String comment;
-        comment = "重生类型：0为普通重生，1为原地重生";
+        comment = "重生类型：0为普通重生，1为原地重生（实际上是复活后传送回去）";
         type = config.get(Configuration.CATEGORY_GENERAL, "type", 0, comment).getInt();
         config.save();
         logger.info("配置加载完毕！ ");

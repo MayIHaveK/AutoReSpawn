@@ -1,6 +1,8 @@
 package com.mayihavek.autorespawn;
 
 import com.mayihavek.autorespawn.config.ConfigLoader;
+import com.mayihavek.autorespawn.event.AutoSpawnHandler;
+import com.mayihavek.autorespawn.network.NetworkLoader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -22,6 +24,7 @@ public class Main
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-
+        NetworkLoader.init();
+        new AutoSpawnHandler().init();
     }
 }
