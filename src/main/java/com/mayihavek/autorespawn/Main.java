@@ -26,9 +26,7 @@ public class Main
     public void init(FMLInitializationEvent event)
     {
         NetworkLoader.init();
-        if(event.getSide().isServer()) {
-            new AutoSpawnHandler().init();
-        }
+        new AutoSpawnHandler().init();
         if(event.getSide().isClient()){
             new GuiOpenHandler().init();
         }

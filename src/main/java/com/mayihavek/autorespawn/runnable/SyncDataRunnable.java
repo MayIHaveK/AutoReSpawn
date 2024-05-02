@@ -37,7 +37,6 @@ public class SyncDataRunnable implements Runnable {
                         MessagePositionHistory history = new MessagePositionHistory();
                         history.playerName = Minecraft.getMinecraft().thePlayer.getCommandSenderName();
                         NetworkLoader.instance.sendToServer(history);
-                        System.out.println("SyncDataRunnable: send position history to server");
                         timer.cancel();
                     }
                 }
